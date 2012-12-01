@@ -13,7 +13,7 @@ class TestCase(IntegrationTestCase):
         installer.uninstallProducts(['plone.app.jquery'])
         self.assertFalse(installer.isProductInstalled('plone.app.jquery'))
 
-        from sll.basepolicy.upgrades import install_packages
+        from abita.utils.utils import install_packages
         install_packages(self.portal, 'plone.app.jquery')
 
         self.assertTrue(installer.isProductInstalled('plone.app.jquery'))
@@ -24,7 +24,7 @@ class TestCase(IntegrationTestCase):
         self.assertFalse(installer.isProductInstalled('plone.app.jquery'))
         self.assertFalse(installer.isProductInstalled('plone.app.collection'))
 
-        from sll.basepolicy.upgrades import install_packages
+        from abita.utils.utils import install_packages
         install_packages(self.portal, ['plone.app.jquery', 'plone.app.collection'])
 
         self.assertTrue(installer.isProductInstalled('plone.app.jquery'))
