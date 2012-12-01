@@ -10,20 +10,6 @@ class AbitaUtilsLayer(PloneSandboxLayer):
 
     defaultBases = (PLONE_FIXTURE,)
 
-    def setUpZope(self, app, configurationContext):
-        """Set up Zope."""
-        # Load ZCML
-        import abita.utils
-        self.loadZCML(package=abita.utils)
-
-    def setUpPloneSite(self, portal):
-        """Set up Plone."""
-        # Install into Plone site using portal_setup
-        self.applyProfile(portal, 'abita.utils:default')
-
-    def tearDownZope(self, app):
-        """Tear down Zope."""
-
 
 FIXTURE = AbitaUtilsLayer()
 INTEGRATION_TESTING = IntegrationTesting(
