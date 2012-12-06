@@ -1,6 +1,8 @@
 from Products.CMFCore.utils import getToolByName
 from abita.utils.tests.base import IntegrationTestCase
 
+import mock
+
 
 class TestCase(IntegrationTestCase):
     """TestCase for Plone setup."""
@@ -29,3 +31,10 @@ class TestCase(IntegrationTestCase):
 
         self.assertTrue(installer.isProductInstalled('plone.app.jquery'))
         self.assertTrue(installer.isProductInstalled('plone.app.collection'))
+
+    @mock.patch('abita.utils.utils.getToolByName')
+    def test_reimport_profile(self, getToolByName):
+        from abita.utils.utils import reimport_profile
+        reimport_profile(self.portal, 'PROFILE', 'NAME')
+        getToolByName().runImportStepFromProfile.assert_called_with(
+            'PROFILE', 'NAME', run_dependencies=False, purge_old=False)
