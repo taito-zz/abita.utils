@@ -7,6 +7,11 @@ Utilities for Plone.
 Changelog
 ---------
 
+0.3 (2013-01-07)
+================
+
+- Added function to get css resource. [taito]
+
 0.2.1 (2013-01-06)
 ==================
 

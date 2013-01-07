@@ -38,3 +38,7 @@ class TestCase(IntegrationTestCase):
         reimport_profile(self.portal, 'PROFILE', 'NAME')
         getToolByName().runImportStepFromProfile.assert_called_with(
             'PROFILE', 'NAME', run_dependencies=False, purge_old=False)
+
+    def test_get_css_resource(self):
+        from abita.utils.utils import get_css_resource
+        self.assertIsNotNone(get_css_resource(self.portal, 'member.css'))
