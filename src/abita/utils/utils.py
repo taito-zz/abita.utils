@@ -1,4 +1,6 @@
 from Products.CMFCore.utils import getToolByName
+from plone.registry.interfaces import IRegistry
+from zope.component import getUtility
 
 import logging
 
@@ -24,3 +26,7 @@ def reimport_profile(context, profile, name):
 
 def get_css_resource(context, name):
     return getToolByName(context, 'portal_css').getResource(name)
+
+
+def get_record(name):
+    return getUtility(IRegistry).records.get(name)

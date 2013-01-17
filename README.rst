@@ -7,6 +7,11 @@ Utilities for Plone.
 Changelog
 ---------
 
+0.4 (2013-01-17)
+================
+
+- Added function to get registry record. [taito]
+
 0.3 (2013-01-07)
 ================
 

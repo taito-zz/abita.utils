@@ -42,3 +42,7 @@ class TestCase(IntegrationTestCase):
     def test_get_css_resource(self):
         from abita.utils.utils import get_css_resource
         self.assertIsNotNone(get_css_resource(self.portal, 'member.css'))
+
+    def test_get_record(self):
+        from abita.utils.utils import get_record
+        self.assertIsNotNone(get_record('plone.app.discussion.interfaces.IDiscussionSettings.anonymous_comments'))
