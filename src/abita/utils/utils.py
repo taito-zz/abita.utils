@@ -30,3 +30,7 @@ def get_css_resource(context, name):
 
 def get_record(name):
     return getUtility(IRegistry).records.get(name)
+
+
+def get_roles(context, permission):
+    return sorted([item['name'] for item in context.rolesOfPermission(permission) if item['selected'] == 'SELECTED'])

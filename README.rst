@@ -7,6 +7,11 @@ Utilities for Plone.
 Changelog
 ---------
 
+0.5 (2013-01-24)
+================
+
+- Added function to get roles against context and permission. [taito]
+
 0.4 (2013-01-17)
 ================
 

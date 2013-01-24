@@ -46,3 +46,8 @@ class TestCase(IntegrationTestCase):
     def test_get_record(self):
         from abita.utils.utils import get_record
         self.assertIsNotNone(get_record('plone.app.discussion.interfaces.IDiscussionSettings.anonymous_comments'))
+
+    def test_get_roles(self):
+        from abita.utils.utils import get_roles
+        self.assertEqual(get_roles(self.portal, 'Modify portal content'),
+            ['Editor', 'Owner', 'Site Administrator'])
