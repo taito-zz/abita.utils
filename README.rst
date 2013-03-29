@@ -7,6 +7,11 @@ Utilities for Plone.
 Changelog
 ---------
 
+0.6 (2013-03-29)
+================
+
+- Added function to get workflow. [taito]
+
 0.5 (2013-01-24)
 ================
 

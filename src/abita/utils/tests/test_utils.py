@@ -51,3 +51,8 @@ class TestCase(IntegrationTestCase):
         from abita.utils.utils import get_roles
         self.assertEqual(get_roles(self.portal, 'Modify portal content'),
             ['Editor', 'Owner', 'Site Administrator'])
+
+    def test_get_workflow(self):
+        from Products.DCWorkflow.DCWorkflow import DCWorkflowDefinition
+        from abita.utils.utils import get_workflow
+        self.assertIsInstance(get_workflow(self.portal, 'simple_publication_workflow'), DCWorkflowDefinition)

@@ -34,3 +34,8 @@ def get_record(name):
 
 def get_roles(context, permission):
     return sorted([item['name'] for item in context.rolesOfPermission(permission) if item['selected'] == 'SELECTED'])
+
+
+def get_workflow(context, name):
+    workflow = getToolByName(context, 'portal_workflow')
+    return workflow[name]
