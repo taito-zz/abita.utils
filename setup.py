@@ -25,8 +25,8 @@ setup(
     zip_safe=False,
     install_requires=[
         'Products.CMFPlone',
-        'hexagonit.testing',
         'setuptools'],
+    extras_require={'test': ['mock', 'plone.app.testing']},
     entry_points="""
     # -*- Entry points: -*-
 
