@@ -7,7 +7,7 @@ Utilities for Plone.
 Changelog
 ---------
 
-0.7 (2013-04-xx)
+0.7 (2013-04-15)
 ================
 
 - Moved test packages to extras_require. [taito]
